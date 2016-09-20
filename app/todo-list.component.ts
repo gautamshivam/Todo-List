@@ -15,12 +15,16 @@ export class TodoListComponent {
         {task:"dinner",date:"2016-09-21",time:"21:45"}
     ];
     public  selectedItem;
+    public displaySelected;
 
     public date = "";
     public time = "";
 
     onItemClicked(item){
         this.selectedItem = item;
+        this.displaySelected = item.task;
+        this.date = item.date;
+        this.time = item.time;
     }
     onAddItem(item,date,time){
         if(item.value != ""){

@@ -24,6 +24,9 @@ var TodoListComponent = (function () {
     }
     TodoListComponent.prototype.onItemClicked = function (item) {
         this.selectedItem = item;
+        this.displaySelected = item.task;
+        this.date = item.date;
+        this.time = item.time;
     };
     TodoListComponent.prototype.onAddItem = function (item, date, time) {
         if (item.value != "") {

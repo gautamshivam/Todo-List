@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
         <article>
-        <input class="text-center inputTask" [(ngModel)]="item" id="inputlg focused" (keypress)="enterkeyPressed($event,items,date,time)" placeholder="What's the Task" autofocus #items><br>
+        <input class="text-center inputTask" [(ngModel)]="displaySelected" id="inputlg focused" (keypress)="enterkeyPressed($event,items,date,time)" placeholder="What's the Task" autofocus #items><br>
         <div class="text-center">
             <label>Date</label>
             <input class="text-center inputDate" type="date" [(ngModel)]="date" (keypress)="enterkeyPressed($event,items,date,time)">
