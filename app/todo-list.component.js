@@ -15,7 +15,9 @@ var core_1 = require('@angular/core');
 var TodoListComponent = (function () {
     function TodoListComponent() {
         this.todoListItems = [
-            { task: "dinner", date: "2016-09-21", time: "09:45" }
+            { task: "meeting", date: "2016-09-21", time: "10:45" },
+            { task: "lunch", date: "2016-09-21", time: "01:30" },
+            { task: "dinner", date: "2016-09-21", time: "21:45" }
         ];
         this.date = "";
         this.time = "";
