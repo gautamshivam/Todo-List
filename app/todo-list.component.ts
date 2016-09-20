@@ -7,7 +7,7 @@ export class task{
 }
 @Component({
     selector : 'todo-list',
-    templateUrl : ['./app/todo-list.html'],
+    templateUrl : './app/todo-list.html',
     styleUrls : ['./css/todo-list.css']
 })
 export class TodoListComponent {
