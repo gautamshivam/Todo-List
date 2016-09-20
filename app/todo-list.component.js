@@ -12,34 +12,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by shivam gautam on 18-09-2016.
  */
 var core_1 = require('@angular/core');
-var task = (function () {
-    function task() {
-    }
-    return task;
-}());
-exports.task = task;
 var TodoListComponent = (function () {
     function TodoListComponent() {
-        this.todoListItems = ["dinner", "sleep", "study"];
+        this.todoListItems = [
+            { task: "dinner", date: "2016-09-21", time: "09:45" }
+        ];
+        this.date = "";
+        this.time = "";
     }
     TodoListComponent.prototype.onItemClicked = function (item) {
         this.selectedItem = item;
     };
-    TodoListComponent.prototype.onAddItem = function (item) {
-        if (item.value != "")
-            this.todoListItems.push(item.value);
-        item.value = null;
-    };
-    TodoListComponent.prototype.enterkeyPressed = function (event, item) {
-        if (event.keyCode === 13 && item.value) {
-            this.todoListItems.push(item.value);
+    TodoListComponent.prototype.onAddItem = function (item, date, time) {
+        if (item.value != "") {
+            this.todoListItems.push({ task: item.value, date: date.toString(), time: time.toString() });
             item.value = null;
         }
     };
-    TodoListComponent.prototype.onUpdateItem = function (item) {
-        if (item.value != "")
-            this.todoListItems[this.todoListItems.indexOf(this.selectedItem)] = item.value;
-        item.value = null;
+    TodoListComponent.prototype.enterkeyPressed = function (event, item, date, time) {
+        if (event.keyCode === 13 && item.value) {
+            this.todoListItems.push({ task: item.value, date: date.toString(), time: time.toString() });
+            item.value = null;
+        }
+    };
+    TodoListComponent.prototype.onUpdateItem = function (item, date, time) {
+        if (item.value != "") {
+            this.todoListItems[this.todoListItems.indexOf(this.selectedItem)].task = item.value;
+            this.todoListItems[this.todoListItems.indexOf(this.selectedItem)].date = date.toString();
+            this.todoListItems[this.todoListItems.indexOf(this.selectedItem)].time = time.toString();
+            item.value = null;
+        }
     };
     TodoListComponent.prototype.onDeleteItem = function () {
         if (this.selectedItem)
@@ -48,7 +50,7 @@ var TodoListComponent = (function () {
     TodoListComponent = __decorate([
         core_1.Component({
             selector: 'todo-list',
-            templateUrl: ['./app/todo-list.html'],
+            templateUrl: './app/todo-list.html',
             styleUrls: ['./css/todo-list.css']
         }), 
         __metadata('design:paramtypes', [])

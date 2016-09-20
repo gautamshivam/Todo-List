@@ -2,35 +2,44 @@
  * Created by shivam gautam on 18-09-2016.
  */
 import { Component } from '@angular/core';
-export class task{
-    detail : string;
-}
+
 @Component({
     selector : 'todo-list',
-    templateUrl : ['./app/todo-list.html'],
+    templateUrl : './app/todo-list.html',
     styleUrls : ['./css/todo-list.css']
 })
 export class TodoListComponent {
-    public  todoListItems = ["dinner","sleep","study"];
+    public  todoListItems = [
+        {task:"dinner",date:"2016-09-21",time:"09:45"}
+    ];
     public  selectedItem;
+
+    public date = "";
+    public time = "";
+
     onItemClicked(item){
         this.selectedItem = item;
     }
-    onAddItem(item){
-        if(item.value != "")
-        this.todoListItems.push(item.value);
-        item.value = null;
-    }
-    enterkeyPressed(event,item){
-        if(event.keyCode === 13 && item.value){
-            this.todoListItems.push(item.value);
+    onAddItem(item,date,time){
+        if(item.value != ""){
+            this.todoListItems.push({task:item.value , date:date.toString() , time:time.toString()});
             item.value = null;
         }
     }
-    onUpdateItem(item){
-        if(item.value != "")
-            this.todoListItems[this.todoListItems.indexOf(this.selectedItem)]= item.value;
+    enterkeyPressed(event,item,date,time){
+        if(event.keyCode === 13 && item.value){
+            this.todoListItems.push({task:item.value , date:date.toString() , time:time.toString()});
             item.value = null;
+        }
+    }
+    onUpdateItem(item,date,time){
+        if(item.value != ""){
+            this.todoListItems[this.todoListItems.indexOf(this.selectedItem)].task= item.value;
+            this.todoListItems[this.todoListItems.indexOf(this.selectedItem)].date= date.toString();
+            this.todoListItems[this.todoListItems.indexOf(this.selectedItem)].time= time.toString();
+            item.value = null;
+        }
+
     }
     onDeleteItem(){
         if(this.selectedItem)

@@ -1,7 +1,13 @@
 <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
         <article>
-        <input class="text-center" [(ngModel)]="item" id="inputlg focused" (keypress)="enterkeyPressed($event,items)" placeholder="What's the Task" autofocus #items><br>
+        <input class="text-center inputTask" [(ngModel)]="item" id="inputlg focused" (keypress)="enterkeyPressed($event,items,date,time)" placeholder="What's the Task" autofocus #items><br>
+        <div class="text-center">
+            <label>Date</label>
+            <input class="text-center inputDate" type="date" [(ngModel)]="date" (keypress)="enterkeyPressed($event,items,date,time)">
+            <label>Time</label>
+            <input class="text-center inputTime" type="time" [(ngModel)]="time" (keypress)="enterkeyPressed($event,items,date,time)">
+        </div>
         </article>
     </div>
 </div>
@@ -11,15 +17,15 @@
             <li class="list-group-item text-info "
                 *ngFor="let item of todoListItems"
                 [class.selected]="item === selectedItem"
-                (click)="onItemClicked(item)">{{item}}</li>
+                (click)="onItemClicked(item)"><span class="badge">{{item.date}}</span><span class="badge">{{item.time}}</span>{{item.task}}</li>
         </ul>
     </div>
 </div>
 
 <div class="row text-center">
     <div class="col-lg-12">
-        <button class="btn btn-primary" (click)="onAddItem(items)">Add Task</button>
+        <button class="btn btn-primary" (click)="onAddItem(items,date,time)">Add Task</button>
         <button class="btn btn-success" (click)="onDeleteItem()">Completed</button>
-        <button class="btn btn-info" (click)="onUpdateItem(items)">Update Task</button>
+        <button class="btn btn-info" (click)="onUpdateItem(items,date,time)">Update Task</button>
     </div>
 </div>
