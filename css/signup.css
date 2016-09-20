@@ -1,0 +1,42 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+.navbar-nav{
+	text-align: center;
+}
+.jumbotron{
+	
+ 
+}
+.footer{
+	background-color: #e6e6e6;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.fa-facebook-square{
+	color: blue;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.fa-youtube-square{
+	color: red;
+}
+.copyright{
+	text-align: center;
+}
+.panel{
+	
+	text-align: center;
+}
+form{
+	padding: 20px;
+}
+input,textarea{
+	margin: 10px;
+}

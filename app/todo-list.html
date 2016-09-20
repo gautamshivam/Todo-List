@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+        <article>
+        <input class="text-center" [(ngModel)]="item" id="inputlg focused" (keypress)="enterkeyPressed($event,items)" placeholder="What's the Task" autofocus #items><br>
+        </article>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" >
+        <ul class="list-group text-left pre-scrollable">
+            <li class="list-group-item text-info "
+                *ngFor="let item of todoListItems"
+                [class.selected]="item === selectedItem"
+                (click)="onItemClicked(item)">{{item}}</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-lg-12">
+        <button class="btn btn-primary" (click)="onAddItem(items)">Add Task</button>
+        <button class="btn btn-success" (click)="onDeleteItem()">Completed</button>
+        <button class="btn btn-info" (click)="onUpdateItem(items)">Update Task</button>
+    </div>
+</div>

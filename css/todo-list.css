@@ -1,0 +1,14 @@
+input{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    height: 50px;
+    width: 100%;
+    word-wrap: break-word;
+}
+ul{
+    overflow-y: auto;
+}
+li{
+    word-wrap: break-word;
+}

@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>My Schedule</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+  <!-- 3. Display the application -->
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-lg-offset-3">
+          <div class="panel panel-default" style="z-index: 10; margin-top: 10px">
+            <div class="panel-heading text-center" style="color: #2b669a;font-size:75px">todos</div>
+            <my-app><h2 class="text-center text-muted">Loading...</h2></my-app>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-6 col-lg-offset-3">
+            <h4 class="text-info">Instructions</h4>
+            <ul class="text-muted">
+              <li><small>To Add : write task in text field and press <kbd>Enter</kbd> or click on <kbd>Add Task</kbd>.</small> </li>
+              <li><small>To Delete : select task from list and click on <kbd>Completed</kbd>.</small></li>
+              <li><small>To Update : select task from list , write updated text in text field and click on <kbd>Update Task</kbd>.</small> </li>
+            </ul>
+          </div>
+      </div>
+      <footer class="text-center text-muted">
+        <p>&copy designed & developed by SHIVAM GAUTAM</p>
+      </footer>
+    </div>
+  </body>
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</html>
