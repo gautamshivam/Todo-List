@@ -10,7 +10,9 @@ import { Component } from '@angular/core';
 })
 export class TodoListComponent {
     public  todoListItems = [
-        {task:"dinner",date:"2016-09-21",time:"09:45"}
+        {task:"meeting",date:"2016-09-21",time:"10:45"},
+        {task:"lunch",date:"2016-09-21",time:"01:30"},
+        {task:"dinner",date:"2016-09-21",time:"21:45"}
     ];
     public  selectedItem;
 
